@@ -42,4 +42,32 @@ public class TestFastJson2 {
             }
         }
     }
+
+
+    public void show2() {
+        String url = "http://127.0.0.1:8099/sb/queryAll";
+        ResponseEntity<String> forEntity = restTemplate.getForEntity(url, String.class);
+        String body = forEntity.getBody();
+
+        System.out.println(body);
+
+        String jsonString = JSON.toJSONString(body);
+        System.out.println(jsonString);
+        //
+        System.out.println("======");
+        JSONObject jsonObject = JSONObject.parseObject(body);
+        String statusStr = jsonObject.getString("status");
+        if (statusStr.equals("success")) {
+            String dataStr = jsonObject.getString("data");
+            //第一次转换
+            List list = JSON.parseObject(dataStr, List.class);
+            for (Object object : list) {
+                //第二次转化
+                // SbProtModel sbProtModel = JSON.parseObject(object.toString(), SbProtModel.class);
+                // System.out.println(sbProtModel);
+
+//                System.out.println(object);
+            }
+        }
+    }
 }

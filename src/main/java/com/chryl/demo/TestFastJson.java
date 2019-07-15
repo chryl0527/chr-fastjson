@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 测试:putAll,put
+ * 将数据放入JSONObject
  * Created By Chr on 2019/5/24.
  */
 public class TestFastJson {

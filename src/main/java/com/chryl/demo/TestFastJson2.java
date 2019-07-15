@@ -11,6 +11,7 @@ import java.util.Map;
 
 /**
  * 解析httpclient,restTemplate得到的数据
+ *
  * <p>
  * Created By Chr on 2019/7/15.
  */
